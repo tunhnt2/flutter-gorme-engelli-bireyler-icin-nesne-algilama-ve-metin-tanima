@@ -48,8 +48,7 @@ Uygulama tensorflow paketindeki uyumluluk sorunundan dolayı android 12 sürüm 
 
 ## ARAŞTIRMA SONUÇLARI 
 Uygulama temel olarak iki işlevden oluşmaktadır bunlar nesne tanıma ve metin tanımadır. Uygulamanın ana ekranında kullanıcıyı basit bir arayüz karşılamaktadır. Bu arayüz yardımı ile nesne tanıma ve metin tanıma arayüzleri arasında geçiş yapılabilmektedir. Kullanıcı görme engelli bir birey olacağı için mümkün olduğunca basit bir arayüz tasarlamak hedeflenmiştir.
-Uygulama nasıl çalıştığını aşağıdaki playlistten görüntüleyebilirsiniz.
-https://www.youtube.com/watch?v=97pEIXFbhqg&list=PL08JtCwv3HqONaQuNFOX6G2YbKkbTOpuD
+Uygulama nasıl çalıştığını aşağıdaki playlistten görüntüleyebilirsiniz.[Youtube](https://www.youtube.com/watch?v=97pEIXFbhqg&list=PL08JtCwv3HqONaQuNFOX6G2YbKkbTOpuD)
 
 
 ## TARTIŞMA
