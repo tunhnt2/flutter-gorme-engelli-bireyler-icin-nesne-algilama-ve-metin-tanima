@@ -10,10 +10,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:math' as math;
 
-import 'Screen/recognization_page.dart';
-import 'Utils/image_cropper_page.dart';
-import 'Utils/image_picker_class.dart';
-import 'Widgets/modal_dialog.dart';
 import 'camera.dart';
 import 'bndbox.dart';
 import 'models.dart';
@@ -240,53 +236,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () => onSelect(ssd), // ekrana tıklandığında aynı zamanda modeli seçiyoruz
                     ),
                   ),
-                  Align( // metin tarama butonu ----> modal ekranı açılıyor
-                    alignment: Alignment.bottomRight,
-                    child: FloatingActionButton.extended(
-                      label: const Text("metin tara"),
-                      icon: Icon(Icons.photo_camera),
-                      onPressed: () {
-                        imagePickerModal(context, onCameraTap: () {
-                          log("Kamera acildi");
-                          pickImage(source: ImageSource.camera).then((value) {
-                            if (value != '') {
-                              imageCropperView(value, context).then((value) {
-                                if (value != '') {
-                                  Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                      builder: (_) => RecognizePage(
-                                        path: value,
-                                      ),
-                                    ),
-                                  );
-                                }
-                              });
-                            }
-                          });
-                        }, onGalleryTap: () {
-                          log("Galeri acildi");
-                          pickImage(source: ImageSource.gallery).then((value) {
-                            if (value != '') {
-                              imageCropperView(value, context).then((value) {
-                                if (value != '') {
-                                  Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                      builder: (_) => RecognizePage(
-                                        path: value,
-                                      ),
-                                    ),
-                                  );
-                                }
-                              });
-                            }
-                          });
-                        });
-                      },
-                      tooltip: 'Increment',
-                    ),
-                  ),
+
                 ],
               ),
             )
@@ -298,50 +248,6 @@ class _HomePageState extends State<HomePage> {
                   _model,
                   setRecognitions,
                 ),
-                FloatingActionButton.extended(
-                  label: const Text("metin tara"),
-                  icon: Icon(Icons.photo_camera),
-                    onPressed: () {
-                      imagePickerModal(context, onCameraTap: () {
-                        log("Kamera acildi");
-                        pickImage(source: ImageSource.camera).then((value) {
-                          if (value != '') {
-                            imageCropperView(value, context).then((value) {
-                              if (value != '') {
-                                Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                    builder: (_) => RecognizePage(
-                                      path: value,
-                                    ),
-                                  ),
-                                );
-                              }
-                            });
-                          }
-                        });
-                      }, onGalleryTap: () {
-                        log("galeri acildi");
-                        pickImage(source: ImageSource.gallery).then((value) {
-                          if (value != '') {
-                            imageCropperView(value, context).then((value) {
-                              if (value != '') {
-                                Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                    builder: (_) => RecognizePage(
-                                      path: value,
-                                    ),
-                                  ),
-                                );
-                              }
-                            });
-                          }
-                        });
-                      });
-                    },
-                    tooltip: 'Increment',
-                  ),
                 BndBox(
                     _recognitions ?? [],
                     math.max(_imageHeight, _imageWidth),

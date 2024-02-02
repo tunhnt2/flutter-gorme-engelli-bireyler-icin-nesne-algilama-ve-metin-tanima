@@ -31,7 +31,7 @@ class _CameraState extends State<Camera> {
     } else {
       controller = CameraController(
         widget.cameras[0],        // kamera seçimi
-        ResolutionPreset.medium,  // ekran çözünürlüğü
+        ResolutionPreset.high,  // ekran çözünürlüğü
       );
       controller!.initialize().then((_) {
         if (!mounted) {
